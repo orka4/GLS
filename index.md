@@ -10,9 +10,8 @@ This tutorial is aimed at people who already have a good understanding of linear
 
 **Acknowledgements:** Thanks are due to my fieldwork group (Luisa Dickenmann, Rebecca Hies, Kinga Kaszap, Thomas Pendlebury, Else Radeloff and Tegan Williams) whom I collected the data with for the Spatial autocorrelation part of the tutorial, and Mathew Rees who was our supervisor during this project and introduced me to the concept of generalised least square models. Also to Claudia Colesie, who taught me about semivariance in the Ecological Measurement course.
 
-<div class = "alert alert-block alert-info">
 There is a lot of text in this tutorial, as the form of variance, spatial and temporal autocorrelation varies significantly between datasets, so a good understanding of the model is important. 
-</div>div>
+
 
 
 <a name="download"></a> >To get all the materials for this tutorial head <a href="https://github.com/ourcodingclub/CC-EAB-tut-ideas" target="_blank">this GitHub repository</a>, click on the Code button and Download ZIP and unzip the folder. Alternatively clone the repositary to your github- more information on how to do this is found [here](https://ourcodingclub.github.io/tutorials/git/index.html). 
