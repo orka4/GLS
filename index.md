@@ -61,7 +61,7 @@ If you already know which part you need to learn about, feel free to skip to the
 ### <a name="subsection2"></a>  What is temporal autocorrelation and why is it a problem?
 
 
-**Temporal autocorrelation is when your data has an internal structure that means datapoints separated by certain intervals of time are more similar than other points. Often this can be seen as data collected daily being more similar to days close to it, however other structures can also be apparent.**
+<span style="background-color:green">**Temporal autocorrelation is when your data has an internal structure that means datapoints separated by certain intervals of time are more similar than other points. Often this can be seen as data collected daily being more similar to days close to it, however other structures can also be apparent.**</span>
 
 Temporal autocorrelation is a problem as it negates the statistical assumption of **independence of observations**. In this tutorial we are going to learn how to check for temporal autocorrelation in our data and what to do if we find it.
 
