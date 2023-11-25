@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <img src="Images/Heading image.png" >
+  <img src="Heading image.png" >
 </p>
 
 *Created by Hannah Udall - last updated*
