@@ -1,0 +1,11 @@
+## Useful coding club tutorials    
+
+Before completing the GLS tutorial, I recommend you are confident with the material covered in the following tutorials:    
+
+
+* https://ourcodingclub.github.io/tutorials/modelling/  (Covers linear models and statistical assumptions)
+
+* https://ourcodingclub.github.io/tutorials/data-scaling/  (Covers linear models and statistical assumptions)
+
+* https://ourcodingclub.github.io/tutorials/datavis/  (Covers ggplot syntax)
+

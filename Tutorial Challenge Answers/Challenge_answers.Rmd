@@ -1,0 +1,48 @@
+---
+title: "Challenge answers"
+author: "Hannah Udall"
+date: "2023-11-27"
+output: html_document
+---
+
+
+  First, we shall remove NA values from the 'Solar.R' vector in the airquality       dataset, and make sure the vector is a numeric vector.
+  
+  ```r
+  data3 <- data3[!is.na(data3$Solar.R), ] #Remove NA values
+  airdata$Solar.R<-as.numeric(airdata$Solar.R) #Make sure all values are numeric
+  ```
+  Then, we shall create the two vectors with a time lag= 1
+  To do this we need to know the length of the dataset now NA values have been        removed.
+  
+  ```r
+  nrow(airdata)
+  ```
+  The number of rows is 111. So we shall create the lagged dataframes below.
+  
+  ```r
+  data3_1<- data3[-111,] #dataframe containing rows 1- n-1
+
+  data3_2<-data3[-1,] #dataframe containing rows 2-n
+  ```
+  Then test for correlation visually and numerically:
+  
+  ```r
+  cor<- cor.test(data3_1$Solar.R,data3_2$Solar.R) #Dataframe is in time order
+  p<-cor$p.value #p value very small so there is temporal correlation
+  p #View p value
+  ```
+  The p-value is very large, which indicates no correlation. We can also check the   correlation test.
+  
+  ```r
+  cor(data3_1$Solar.R,data3_2$Solar.R)
+  ```
+  This value is very small, which indicates no correlation.
+  
+  We can now plot the autocorrelation and partial autocorrelation functions to see   if there is correlation at other lag distances.
+  
+  ```r
+  acf(data3$Solar.R, lag.max=31)
+  pacf(data3$Solar.R, lag.max=31)
+  ```
+  As you can see, there is no correlation as the vertical black lines do not         surpass the dashed lines.
