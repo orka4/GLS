@@ -3,7 +3,7 @@
 title: "Introduction to Generalised Least Squares models"
 author: "Hannah Udall"
 date: "2023-11-27"
-output: html_document
+output: Markdown
   
 ---
 
