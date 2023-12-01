@@ -993,7 +993,7 @@ First, we shall remove NA values from the 'Solar.R' vector in the airquality dat
   acf(data3$Solar.R, lag.max=31)
   pacf(data3$Solar.R, lag.max=31)
   ```
-  As you can see, there is no correlation as the vertical black lines do not surpass the dashed lines.
+  As you can see, there is no correlation as the vertical black lines do not surpass the dashed lines. This means there is no temporal autocorrelation.
 
 
 
