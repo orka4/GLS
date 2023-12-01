@@ -3,10 +3,12 @@
 title: "Introduction to Generalised Least Squares models"
 author: "Hannah Udall"
 date: "2023-11-27"
-output: html_document
+output: pdf_document
   
 ---
 
+
+ 
 
 <p align="center">
   <img src="Images/website images/Heading image.png" >
@@ -932,7 +934,7 @@ To answer this question we needed to quantify plant diversity and light availabi
   To measure light availability we took a photograph of the forest canopy with a fish eye lens. This image was converted to black and white, where the white section was the sky and the black section was the leaves in the upper canopy. A computer programme then computed the LAI.
 
 <div style="background-color: #add8e6; padding: 10px; border: 1px solid #4682b4; border-radius: 10px; margin-top: 20px; margin-bottom: 20px; text-align: center;">
-  <p>**What is the LAI?** I hear you ask. LAI stands for *Light availability index*. It is the total surface area of leaves per unit of ground area. It is a unitless quantity as the actual units are ( m^2 / m^2 ) which cancels out to equal 1. Something to note about this quantity is that higher values mean less light availability, which can sometimes be a bit counterintuitive.</p>
+  <p>**What is the LAI?** I hear you ask. LAI stands for *Light availability index*. It is the total surface area of leaves per unit of ground area. It is a unitless quantity as the actual units are (m^2/m^2) which cancels out to equal 1. Something to note about this quantity is that higher values mean less light availability, which can sometimes be a bit counterintuitive.</p>
 </div>
 
 
