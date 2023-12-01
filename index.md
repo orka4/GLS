@@ -8,8 +8,6 @@ output: html_document
 ---
 
 
- 
-
 <p align="center">
   <img src="Images/website images/Heading image.png" >
 </p>
@@ -27,7 +25,7 @@ This tutorial is aimed at people who already have a good understanding of linear
 There is a lot of text in this tutorial, as the form of variance, spatial and temporal autocorrelation varies significantly between datasets, so a good understanding of the model is important. 
 
 
-<a name="download"></a> To get all the materials for this tutorial head <a href="https://github.com/EdDataScienceEES/tutorial-orka4" target="_blank">this GitHub repository</a>, click on the Code button and Download ZIP and unzip the folder. Alternatively clone the repositary to your github- more information on how to do this is found [here](https://ourcodingclub.github.io/tutorials/git/index.html).
+<a name="download"></a> To get all the materials for this tutorial head <a href="https://github.com/EdDataScienceEES/tutorial-orka4" target="_blank">this GitHub repository</a>, and download the folder called 'data'. Alternatively clone the repositary to your github- more information on how to do this is found [here](https://ourcodingclub.github.io/tutorials/git/index.html).
 
 
 
@@ -38,9 +36,9 @@ There is a lot of text in this tutorial, as the form of variance, spatial and te
 ### <a href="#section1"> 1. What is a GLS model and why should I care?</a>
 
 ### <a href="#section2"> 2. Temporal autocorrelation</a>
-* <a href="#subsection1">What is temporal autocorrelation and why is it a problem?</a>
+* <a href="#section2">What is temporal autocorrelation and why is it a problem?</a>
 * <a href="#subsection2">Recognising temporal autocorrelation</a>
-* <a href="#subsection3">Which correlation structure do I have? The GLS model</a>
+* <a href="#subsection3">Modelling temporally autocorrelated data</a>
 * <a href="#subsection4">Plotting our model</a>
 
 ### <a href="#section3"> 3. Non-constant variance</a>
@@ -56,6 +54,8 @@ There is a lot of text in this tutorial, as the form of variance, spatial and te
 * <a href="#subsection12">Plotting our model</a>
 
 ### <a href="#section5"> 5. Challenge time !</a>
+
+### <a href="#section7"> 6. Explanation of Ecology</a>
 
 ### <a href="#section6"> 5. The end</a>
 * <a href="#subsection13">Tutorial Outcomes</a>
@@ -106,7 +106,7 @@ If you already know which part you need to learn about, feel free to skip to the
 
 ## Temporal autocorrelation <a name="section2"></a> 
 
-### <a name="subsection2"></a>  What is temporal autocorrelation and why is it a problem?
+### What is temporal autocorrelation and why is it a problem?
 
 <div style="background-color: #add8e6; padding: 10px; border: 1px solid #4682b4; border-radius: 10px; margin-top: 20px; margin-bottom: 20px;">
   <p>**Temporal autocorrelation** is when your data has an internal structure that means datapoints separated by certain intervals of time are more similar than other points. Often this can be seen as data collected daily being more similar to days close to it, however other structures can also be apparent.</p>
@@ -163,7 +163,7 @@ We shall **delete** the other 'time' columns to avoid confusion later in the tut
 airdata<-airdata %>% select(-c("Day", "Month","Date"))
 ```
 
-### <a name="subsection2"></a> Recognising temporal autocorrelation
+####  <a name="subsection2"></a> Recognising temporal autocorrelation
 
 Since we want to run a statistical model looking at how ozone concentration changes with time, we are going to test for temporal autocorrelation in the ozone variable. 
 
@@ -622,7 +622,7 @@ The model predictions line has changed very slightly, becoming steeper, but it i
 
 <hr style="border-color: #999; border-width: 2px;">
 
-## <a name="section2"></a> Spatial autocorrelation
+## <a name="section4"></a> Spatial autocorrelation
 
 #### <a name="subsection9"></a> What is spatial autocorrelation and why is it a problem?
 <div style="background-color: #add8e6; padding: 10px; border: 1px solid #4682b4; border-radius: 10px; margin-top: 20px; margin-bottom: 20px;">
@@ -900,9 +900,9 @@ This plot shows us that the plant diversity decreases as LAI increases.
 Now it's over to you...
 For the challenge see if you can determine if there is temporal autocorrelation in the airquality dataset (used <a href="#airquality">here</a>) in the 'Solar.R' variable.
 
-To see the solution click [here](Tutorial Challenge/Challenge_answers.html)
+To see the solution click <a href="#solution">here</a>.
 
-## Explanation of ecology 
+## Explanation of ecology <a name="section7"></a>
 In the spatial autocorrelation part of the tutorial, there were some strange sounding variables to non-ecologists! Here is a little explanation of what it all meant...
 <figure style="text-align: center;">
   <img src="Images/website images/canopy_image.JPG" width="300" alt="An example of one of our 'forest canopy' images, taken with a fish-eye lens.">
@@ -934,7 +934,7 @@ To answer this question we needed to quantify plant diversity and light availabi
   To measure light availability we took a photograph of the forest canopy with a fish eye lens. This image was converted to black and white, where the white section was the sky and the black section was the leaves in the upper canopy. A computer programme then computed the LAI.
 
 <div style="background-color: #add8e6; padding: 10px; border: 1px solid #4682b4; border-radius: 10px; margin-top: 20px; margin-bottom: 20px; text-align: center;">
-  <p>**What is the LAI?** I hear you ask. LAI stands for *Light availability index*. It is the total surface area of leaves per unit of ground area. It is a unitless quantity as the actual units are (m^2/m^2) which cancels out to equal 1. Something to note about this quantity is that higher values mean less light availability, which can sometimes be a bit counterintuitive.</p>
+  <p>**What is the LAI?** I hear you ask. LAI stands for *Light availability index*. It is the total surface area of leaves per unit of ground area. It is a unitless quantity as the actual units are ( m<sup>2</sup> / m<sup>2</sup> ) which cancels out to equal 1. Something to note about this quantity is that higher values mean less light availability, which can sometimes be a bit counterintuitive.</p>
 </div>
 
 
@@ -950,6 +950,50 @@ If you would like to learn more about this topic, see the scientific papers in [
 * Understand what temporal and spatial autocorrelation is
 * Understand how to check your data for temporal autocorrelation, spatial autocorrelation and heteroskedasticity.
 * Understand how to use generalised least-square models to model data with autocorrelation or heteroskedasticity
+
+### Challenge solution <a name="solution"></a>
+**Well done** for having a go at the challenge! The solution is below.
+
+First, we shall remove NA values from the 'Solar.R' vector in the airquality dataset, and make sure the vector is a numeric vector.
+  
+  ```r
+  data3 <- data3[!is.na(data3$Solar.R), ] #Remove NA values
+  airdata$Solar.R<-as.numeric(airdata$Solar.R) #Make sure all values are numeric
+  ```
+  Then, we shall create the two vectors with a time lag= 1
+  To do this we need to know the length of the dataset now NA values have been        removed.
+  
+  ```r
+  nrow(airdata)
+  ```
+  The number of rows is 111. So we shall create the lagged dataframes below.
+  
+  ```r
+  data3_1<- data3[-111,] #dataframe containing rows 1- n-1
+
+  data3_2<-data3[-1,] #dataframe containing rows 2-n
+  ```
+  Then test for correlation visually and numerically:
+  
+  ```r
+  cor<- cor.test(data3_1$Solar.R,data3_2$Solar.R) #Dataframe is in time order
+  p<-cor$p.value #p value very small so there is temporal correlation
+  p #View p value
+  ```
+  The p-value is very large, which indicates no correlation. We can also check the correlation test.
+  
+  ```r
+  cor(data3_1$Solar.R,data3_2$Solar.R)
+  ```
+  This value is very small, which indicates no correlation.
+  
+  We can now plot the autocorrelation and partial autocorrelation functions to see if there is correlation at other lag distances.
+  
+  ```r
+  acf(data3$Solar.R, lag.max=31)
+  pacf(data3$Solar.R, lag.max=31)
+  ```
+  As you can see, there is no correlation as the vertical black lines do not surpass the dashed lines. This means there is no temporal autocorrelation.
 
 
 
